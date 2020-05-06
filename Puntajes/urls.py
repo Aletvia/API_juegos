@@ -20,5 +20,6 @@ from .   import views
 
 urlpatterns = [
     url(r'^idealweight/',views.IdealWeight),
+    path('', views.index.as_view(), name="index"),
     path('addscore/', views.createScore.as_view(), name="createScore"),
 ]

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import Http404
+from django.http import Http404, HttpResponse
 from rest_framework.views import APIView
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -22,7 +22,9 @@ def IdealWeight(heightdata):
     except ValueError as e:
         return Response(e.args[0],status.HTTP_400_BAD_REQUEST)
 
-
+class index(APIView):
+    def get(*args, **kwargs):
+        return HttpResponse("Hola!, buena tarde")
 
 class createScore(APIView):
     def post(self, request, *args, **kwargs):
